@@ -1,0 +1,27 @@
+<div class="jumbotron">
+  <div class="container wrapper">
+   <div class="col-sm-8">
+     <ol class="breadcrumb">
+       <li> <%= link_to "albums",albums_path%></li>
+     </ol>
+     <h2 class="sec_heading"><%= @album.name %> </h2>
+  </div>
+
+  </div>
+</div>
+<div class="container content">
+  <p id="notice"><%= notice %></p>
+
+	<p>
+	  <strong>Name:</strong>
+	  <%= @album.name %>
+	</p>
+
+	<p>
+	  <strong>Artist:</strong>
+	  <%= @album.artist %>
+	</p>
+
+	<%= link_to 'Edit', edit_album_path(@album) %> |
+	<%= link_to 'Back', albums_path %>
+</div>

@@ -1,0 +1,27 @@
+# Define the defaults for postgresql
+
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  timeout: 5000
+  pool: 5
+  username: sarath
+  password: qburst
+  host: localhost
+  port: 5432
+  min_messages: warning
+
+
+# Define the Environments
+
+development:
+  <<: *default
+  database: music_development
+
+test:
+  <<: *default
+  database: music_test
+
+production:
+  <<: *default
+  database: music_development

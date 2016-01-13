@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <div class="container wrapper">
+   <div class="col-sm-8">
+     <ol class="breadcrumb">
+       <li> <%= link_to "albums",albums_path%></li>
+     </ol>
+     <h2 class="sec_heading">New album </h2>
+  </div>
+
+  </div>
+</div>
+<div class="container content">
+  <%= render 'form' %>
+
+  <%= link_to 'Show', @album %> |
+	<%= link_to 'Back', albums_path %>
+</div>
+
+

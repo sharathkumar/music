@@ -1,0 +1,48 @@
+<div class="jumbotron">
+  <div class="container wrapper">
+   <div class="col-sm-8">
+    <p id="notice"><%= notice %></p>
+    <ol class="breadcrumb">
+     <li> <%= link_to "album",albums_path%></li>
+   </ol>
+   <h2 class="sec_heading">albums </h2>
+ </div>
+ <div class="col-sm-4">
+   <ul class="sub_nav">
+    <li><%= link_to "New album ", new_album_path, :class =>"btn btn-default"%></li>
+    
+  </ul>
+</div>
+</div>
+</div>
+
+<div class="container content">
+  <%if @albums.present? %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>album #</th>
+        <td>Name</td>
+        <th>Artist</th>
+        <th colspan="3">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @albums.each do |album| %>
+      <tr>
+        <td><%= album.id %></td>
+        <td><%= album.name %></td>
+        <td><%= album.artist %></td>
+        <td><%= link_to 'Show', album, :class =>"btn btn-default" %> | 
+          <%= link_to 'Edit', edit_album_path(album), :class =>"btn btn-default" %> | 
+          <%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"btn btn-default" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <% else %>
+    <fieldset  class = "no_message_text">
+      No albums placed yet.
+    </fieldset>
+  <%end%>
+</div>

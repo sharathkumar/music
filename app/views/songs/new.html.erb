@@ -1,0 +1,16 @@
+<div class="jumbotron">
+  <div class="container wrapper">
+   <div class="col-sm-8">
+     <ol class="breadcrumb">
+       <li> <%= link_to "songs",songs_path%></li>
+     </ol>
+     <h2 class="sec_heading">New song </h2>
+  </div>
+
+  </div>
+</div>
+<div class="container content">
+  <%= render 'form' %>
+
+  <%= link_to 'Back', songs_path %>
+</div>
